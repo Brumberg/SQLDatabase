@@ -27,8 +27,9 @@ def main():
     # Fetch a single row using fetchone() method.
     data = cursor.fetchone()
     print('Database version : {version}'.format(version=data))
-
-    sqlstatement = 'SELECT * FROM Accounts'
+    
+    table = 'Accounts'
+    sqlstatement = 'SELECT * FROM {table}'.format(table=table)
     cursor.execute(sqlstatement)  
     results = cursor.fetchall()
     for i in results:
